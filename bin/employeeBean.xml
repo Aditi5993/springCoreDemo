@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/util/spring-context.xsd">
+
+<bean id="adr" class="com.org.Address">
+<property name="city" value="Raya"></property>
+<property name="state" value="UP"></property>
+<property name="zipcode" value="281204"></property>
+
+</bean>
+
+<bean id="emp1" class="com.org.Employee" init-method="myInit" destroy-method="myDestroy">
+<property name="eId" value="007"></property>
+<property name="eName" value="James Bond"></property>
+<constructor-arg ref="adr"/>
+
+</bean>
+
+
+</beans>
